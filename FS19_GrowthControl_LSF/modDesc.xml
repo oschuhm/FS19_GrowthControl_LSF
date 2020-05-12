@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="42">
-    <author>apuehri|LS-Modcompany</author>
-    <version>1.0.0.0</version>
+    <author>apuehri|LS-Modcompany|LSFarmers</author>
+    <version>1.0.0.0.1</version>
 	
 	<title>
 		<en>GrowthControl</en>
@@ -14,6 +14,9 @@ You can also use "Shift-Left" + "Y" keys to display the approximate remaining ti
 
 V1.0.0.0:
 + FS19 first implementation, integration multiplayer, adding weed control
+
+V1.0.0.0.1:
++ added Multifruit for Holzer Map
 ]]></en>
 		<de><![CDATA[Dieser Mod erlaubt es die Pflanzen- und Unkrautwachstumszeit nach eigene Vorstellungen einzustellen!
 Weiters is es möglich den Ertrag und Saatgutverbrauch anzupassen! (alle Anpassungen in der "growthcontrol.xml" im Savegame)
@@ -21,6 +24,11 @@ Außerdem kann mit den Tasten "Shift-Links" + "Y" eine Anzeige eingeblendet werd
 
 V1.0.0.0:
 + FS19 Erstumsetzung, Integration Multiplayer, Unkrautwachstum
+
+V1.0.0.0.1:
++ Multifrucht für Holzer Map hinzugefügt
+
+
 ]]></de>
       <fr><![CDATA[Ce mod vous permet d'ajuster le temps de croissance des plantes et des mauvaises herbes selon vos propres idées!
 De plus, il est possible d'ajuster le rendement et la consommation de semences! (tous les ajustements dans le fichier "growthcontrol.xml" de la sauvegarde)	  
@@ -28,6 +36,9 @@ Aussi, en utilisant la touche "Shift-gauche" + "Y" un affichage semble être mon
 
 Changelog - V1.0.0.0:
 + FS19 première mise en œuvre, intégration multijoueur, croissance des mauvaises herbes
+
+V1.0.0.0.1:
++ added Multifruit for Holzer Map
 ]]></fr> 	
 	</description>
 

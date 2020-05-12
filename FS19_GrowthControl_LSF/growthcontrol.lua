@@ -1,15 +1,16 @@
 --
 -- growthcontrol
--- V1.0.0.0
+-- V1.0.0.0.1
 --
--- @author apuehri
+-- @author apuehri, LSFarmers
 -- @date 07/01/2019
 --
 -- Copyright (C) apuehri
 -- V1.0.0.0 ..... FS19 first implementation, integration multiplayer, adding weed control
+-- V1.0.0.0.1 ..... added multifruit for Holzer Map
 
 growthcontrol = {};
-growthcontrol.Version = "1.0.0.0";
+growthcontrol.Version = "1.0.0.0.1";
 growthcontrol.debug = false;
 
 function growthcontrol.prerequisitesPresent(specializations)
@@ -33,8 +34,8 @@ function growthcontrol:loadMap(name)
 	--initialize
 	growthcontrol.showHud = false;
 	growthcontrol.recalculate = false;
-	growthcontrol.maxnumfruits = 15;
-	growthcontrol.fruitnames = {[0]="wheat",[1]="grass",[2]="canola",[3]="barley",[4]="maize",[5]="not used",[6]="potato",[7]="sugarBeet",[8]="sunflower",[9]="soybean",[10]="oilseedRadish",[11]="poplar",[12]="not used",[13]="oat",[14]="sugarCane",[15]="cotton"};
+	growthcontrol.maxnumfruits = 29;
+	growthcontrol.fruitnames = {[0]="wheat",[1]="grass",[2]="canola",[3]="barley",[4]="maize",[5]="not used",[6]="potato",[7]="sugarBeet",[8]="sunflower",[9]="soybean",[10]="oilseedRadish",[11]="poplar",[12]="not used",[13]="not used",[14]="not used",[15]="oat",[16]="sugarCane",[17]="not used",[18]="not used",[19]="not used",[20]="not used",[21]="not used",[22]="not used",[23]="not used",[24]="not used",[25]="alfalfa",[26]="clover",[27]="carrot",[28]="onion",[29]="incarase_grass"};
 	growthcontrol.growthhours = {};	
 	growthcontrol.growthstatetime = {};
 	growthcontrol.growthremtime = {};
@@ -95,13 +96,14 @@ function growthcontrol:loadMap(name)
 
 	if fileExists(savegameFolderPath .. '/careerSavegame.xml') then
 		if fileExists(savegameFolderPath .. '/growthcontrol.xml') then
-			print("--- loading growthcontrol V"..growthcontrol.Version.." (c) by aPuehri|LS-Modcompany --- loading savegame ---");
+			print("--- loading growthcontrol V"..growthcontrol.Version.." (c) by aPuehri|LS-Modcompany|LSFarmers --- loading savegame ---");
 			local key = "growthcontrol";
 			local xmlFile = loadXMLFile("growthcontrol", savegameFolderPath .. "/growthcontrol.xml", key);
 				if xmlFile ~= nil then
 					for i=0, growthcontrol.maxnumfruits do
 						local frName = growthcontrol.fruitnames[i];
 						if (frName ~= nil) and (frName ~= "not used") then
+							if debug then print("fruitIndex: "..tostring(i)) end;							
 							growthcontrol.growthhours[i] = getXMLFloat(xmlFile, "growthcontrol.fruit("..i..")#hours");
 							growthcontrol.growthstatetime[i] = growthcontrol.growthhours[i]*3.6e6;
 							growthcontrol.literPerSqm[i] = getXMLFloat(xmlFile, "growthcontrol.fruit("..i..")#literPerSqm");
@@ -127,7 +129,7 @@ function growthcontrol:loadMap(name)
 				end;
 			delete(xmlFile);
 		else
-			print("--- loading growthcontrol V"..growthcontrol.Version.." (c) by aPuehri|LS-Modcompany --- loading initialvalues ---");		
+			print("--- loading growthcontrol V"..growthcontrol.Version.." (c) by aPuehri|LS-Modcompany|LSFarmers --- loading initialvalues ---");		
 			for i=0, growthcontrol.maxnumfruits do
 				local frName = growthcontrol.fruitnames[i];
 				if (frName ~= nil) and (frName ~= "not used") then
@@ -204,7 +206,7 @@ function growthcontrol:loadMap(name)
 			end;
 		end;
 	else
-		print("--- loading growthcontrol V"..growthcontrol.Version.." (c) by aPuehri|LS-Modcompany --- loading initialvalues ---");
+		print("--- loading growthcontrol V"..growthcontrol.Version.." (c) by aPuehri|LS-Modcompany|LSFarmers --- loading initialvalues ---");
 		for i=0, growthcontrol.maxnumfruits do
 			local frName = growthcontrol.fruitnames[i];
 			if (frName ~= nil) and (frName ~= "not used") then
