@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<translationContributors/>
+	<texts>
+		<!-- Keys -->
+		<text name= "input_Gc_ToggleHud" text ="GrowControl Hud on/off" />
+		<!-- Gui -->
+		<text name = "growthstate" text = "remaining time to growth:"/>
+		<text name = "growthhour" text = "hours"/>
+		<text name = "growthToolTipText" text = "Aucun changement possible .... La croissance des plantes est contrôlée par GrowthControl Mod !!!"/>
+	</texts>
+</l10n>
